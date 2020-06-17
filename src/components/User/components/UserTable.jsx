@@ -34,7 +34,7 @@ class UserTable extends React.Component {
           <thead>
             <tr>
               <th scope="col">Full name</th>
-              <th scope="col">Phone number</th>
+              <th scope="col">Phone</th>
               <th scope="col">Buttons</th>
             </tr>
           </thead>
