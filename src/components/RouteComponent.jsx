@@ -17,13 +17,7 @@ function RouteComponent(props) {
         <Route
           path="/create-user"
           render={props => (
-            <Page {...props} component={CreateUser} title="Create Page" />
-          )}
-        />
-        <Route
-          path="/simple-page"
-          render={props => (
-            <Page {...props} component={SimplePage} title="Simple Page" />
+            <Page {...props} component={CreateUser} title="Create User" />
           )}
         />
         <Route
@@ -38,6 +32,12 @@ function RouteComponent(props) {
           path="/user/:id/edit"
           render={props => (
             <Page {...props} component={EditUser} title="Edit User" />
+          )}
+        />
+        <Route
+          path="/simple-page"
+          render={props => (
+            <Page {...props} component={SimplePage} title="Simple Page" />
           )}
         />
         <Route
