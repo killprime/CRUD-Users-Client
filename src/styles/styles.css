@@ -1,0 +1,26 @@
+@import "~normalize.css";
+@import "roboto.css";
+@import "bootstrap.min.css";
+
+body{
+  font-family: 'Roboto', sans-serif;
+  padding-top: 120px;
+}
+
+#loader{
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.wrap-users-table{
+  min-height: 319px;
+  position: relative;
+}
+
+.table-users th, .table-users td{
+  width: 30%;
+}
