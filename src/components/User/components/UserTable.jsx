@@ -52,11 +52,11 @@ class UserTable extends React.Component {
 
                 switch (button){
                   case 'view':
-                    return <Button path={'/user/' + user.id} addClass={'btn-primary'} text={'View user'} key={key} />
+                    return <Button path={'/user/' + user.id} addClass={'btn-primary col-md-12'} text={'View user'} key={key} />
                   case 'edit':
-                    return <Button path={'/user/' + user.id + '/edit'} addClass={'btn-success'} text={'Edit'} key={key} />
+                    return <Button path={'/user/' + user.id + '/edit'} addClass={'btn-success col-md-6'} text={'Edit'} key={key} />
                   case 'delete':
-                    return <Button path={'#'} componentOnClick={() => {deleteUser(user.id)}} addClass={'btn-danger'} text={'Delete'} key={key} />
+                    return <Button path={'#'} componentOnClick={() => {deleteUser(user.id)}} addClass={'btn-danger col-md-6'} text={'Delete'} key={key} />
                 }
                 // Нужно в баттон передать параметр или объект, а в самом компоненте осуществить вызов диспатчера
               }))
