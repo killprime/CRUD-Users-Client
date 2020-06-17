@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 function Button({path, addClass, text, componentOnClick}) {
 
   return (
-    <a href={path} onClick={(componentOnClick) ? componentOnClick : () => {} } className={'btn '+ addClass}>
+    <Link to={path} onClick={(componentOnClick) ? componentOnClick : () => {} } className={'btn '+ addClass}>
       {text}
-    </a>
+    </Link>
   );
 }
 
