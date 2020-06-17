@@ -52,7 +52,7 @@ class UserTable extends React.Component {
 
                 switch (button){
                   case 'view':
-                    return <Button path={'/user/' + user.id} addClass={'btn-primary col-md-12'} text={'View user'} key={key} />
+                    return <Button path={'/user/' + user.id} addClass={'btn-primary col-md-12'} text={'View'} key={key} />
                   case 'edit':
                     return <Button path={'/user/' + user.id + '/edit'} addClass={'btn-success col-md-6'} text={'Edit'} key={key} />
                   case 'delete':

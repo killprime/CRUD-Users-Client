@@ -22,11 +22,11 @@ body{
 }
 
 .table-users th:first-child, .table-users td:first-child{
-  width: 60%;
+  width: 50%;
 }
 
 .table-users th:nth-child(2), .table-users td:nth-child(2){
-  width: 20%;
+  width: 30%;
 }
 
 .table-users th:nth-child(3), .table-users td:nth-child(3){
