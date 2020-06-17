@@ -20,7 +20,6 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "csv-loader": "^3.0.3",
-    "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "less": "^3.11.2",
@@ -40,6 +39,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
+    "express": "^4.17.1",
     "axios": "^0.19.2",
     "formik": "^2.1.4",
     "history": "^4.10.1",
