@@ -11,7 +11,7 @@ import { rootReducer } from './redux/rootReducer';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import 'bootstrap';
+import 'bootstrap'; 
 
 const store = createStore(rootReducer, compose(
   applyMiddleware(
