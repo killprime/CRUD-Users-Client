@@ -187,7 +187,7 @@ export function axiosLoadUsers(pagParams = null, user_id = null){
       dispatch(editStateButtons(['edit', 'delete']))
       param = '/'+user_id;
     }
-    
+
     axios.get(SETTING_API_URL+param)
     .then(function (response) {
 
@@ -200,7 +200,7 @@ export function axiosLoadUsers(pagParams = null, user_id = null){
         pagParams.currentPage = response.data.pagination.currentPage;
 
         dispatch(setParamPagination(pagParams));
-
+        dispatch(updateTotalUsers());
         dispatch(enablePag());
       }
 
