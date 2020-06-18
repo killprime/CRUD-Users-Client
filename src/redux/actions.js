@@ -25,6 +25,31 @@ export function setStateDisableButtons(state)
   }
 }
 
+export function updateTotalUsers(){
+  return (dispatch, getState) => {
+
+    let paramPagination = getState().users.paramPagination;
+
+    let param = '?pageSize='+paramPagination.perPage+'&pageNumber=1';
+
+    axios.get(SETTING_API_URL+param)
+    .then(function (response) {
+
+      paramPagination.total = (response.data.pagination.total) ? Math.ceil((response.data.pagination.total / paramPagination.perPage)) : paramPagination.total;
+
+      if(paramPagination.currentPage > paramPagination.total)
+      {
+        paramPagination.currentPage = paramPagination.total;
+        dispatch(axiosLoadUsers((paramPagination)));
+      }else{
+        dispatch(setParamPagination(paramPagination));
+      }
+
+
+    })
+  }
+}
+
 export function editUser(userData, {setSubmitting, resetForm}, user_id){
   setSubmitting(true);
 
@@ -39,7 +64,7 @@ export function editUser(userData, {setSubmitting, resetForm}, user_id){
       dispatch({type: AXIOS_USERS, payload: [response.data] });
       dispatch(hideLoader());
       dispatch(showAlert({text: 'User data updated successfully', addClass: 'alert-success'}));
-      console.log(response);
+      dispatch(updateTotalUsers());
     })
 
   }
@@ -60,6 +85,8 @@ export function addUser(userData, {setSubmitting, resetForm}){
 
       resetForm();
       setSubmitting(false);
+
+      dispatch(updateTotalUsers());
     })
 
   }
@@ -67,12 +94,12 @@ export function addUser(userData, {setSubmitting, resetForm}){
 }
 
 export function deleteUser(user_id){
-  console.log(user_id);
   return dispatch => {
 
     axios.delete(SETTING_API_URL+'/'+user_id)
     .then(function (response) {
-      dispatch(setStateIsDelete(true))
+      dispatch(updateTotalUsers());
+      dispatch(setStateIsDelete(true));
     })
 
   }
@@ -160,7 +187,7 @@ export function axiosLoadUsers(pagParams = null, user_id = null){
       dispatch(editStateButtons(['edit', 'delete']))
       param = '/'+user_id;
     }
-
+    
     axios.get(SETTING_API_URL+param)
     .then(function (response) {
 

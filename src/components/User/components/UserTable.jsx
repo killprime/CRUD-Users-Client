@@ -22,7 +22,7 @@ class UserTable extends React.Component {
     {
       return (
         <div>
-          No Users Found
+          Users Not Found
         </div>
       )
     }
