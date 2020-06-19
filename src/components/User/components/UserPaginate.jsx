@@ -44,7 +44,8 @@ class UserPaginate extends React.Component {
           previousLinkClassName={'page-link'}
           nextClassName={'page-item'}
           nextLinkClassName={'page-link'}
-          breakClassName={'break-me'}
+          breakClassName={'page-item'}
+          breakLinkClassName={'page-link'}
           pageClassName={'page-item'}
           pageLinkClassName={'page-link'}
           pageCount={this.props.paramPagination.total}
@@ -70,5 +71,5 @@ const mapStateToProps = state => ({
   axiosUsers: state.users.axiosUsers,
   disablePaginate: state.users.disablePaginate
 })
-
+ 
 export default connect(mapStateToProps, mapDispatchToProps)(UserPaginate)
